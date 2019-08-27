@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Book Search</title>
+  <link rel="stylesheet" href="/styles/base.css">
+</head>
+<body>
+  <h1>Book Search</h1>
+
+  <form action="/book-search" method="POST">
+    <fieldset>
+      <legend>Search by Title or Author</legend>
+      <label for="search">
+
+        <span>Title</span>
+        <input type="radio" name="search" value="title">
+      </label>
+      
+      <label for="Author">
+        <span>Author</span>
+        <input type="radio" name="search" value="author">
+      </label>
+
+      <label for="search">
+          <input type="text" name="search" placeholder="insert book name or author, or what the fuck ever.">
+      </label>
+
+    </fieldset>
+  </form>
+  
+</body>
+</html>
