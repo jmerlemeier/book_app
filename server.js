@@ -48,20 +48,18 @@ function searchForBook(request, response){
   }
 
   superagent.get(url).then(result => {
-
     const bookResults = result.body.items;
-
     const formattedData = bookResults.slice(0, 10).map(book => {
       return new Book(book);
     })
-    // console.log(formattedData);
 
-    response.send(formattedData);
-    // response.render('/', formattedData);
+    response.render('./pages/searches/show', {myBooks : formattedData});
 
-  }).catch(error => response.status(500).send(error.message));
+  }).catch(error => response.status(404).render('pages/error'));
 };
 
+app.get('*', (request, response) => { response.status(404).render('pages/error')
+});
 
 //===================================================
 
