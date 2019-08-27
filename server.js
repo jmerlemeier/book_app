@@ -15,7 +15,7 @@ app.use(express.static('./public'));
 
 app.get('/', newSearch);
 
-app.post('/book-search', searchForBook)
+// app.post('/book-search', searchForBook)
 
 //Route Handlers
 function newSearch(request, response){
