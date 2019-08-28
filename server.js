@@ -14,14 +14,25 @@ client.on('error', (error) => console.error(error));
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('./public'));
-app.get('/', newSearch);
+app.get('/', mySavedBooks);
+app.get('/new', newSearch)
 app.get('/books/:isbn', getOneBook);
 app.post('/book-search', searchForBook);
 app.get('/saved-books', mySavedBooks);
+app.post('/add', addBook);
+
+function addBook(request, response) {
+  const bookData = request.body;
+  const sqlInsert = 'INSERT INTO bookshelf (author, title, isbn, image_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6);'
+  const sqlArray = [bookData.author, bookData.title, bookData.isbn, bookData.image_url, bookData.description, bookData.bookshelf]
+  client.query(sqlInsert, sqlArray)
+  response.redirect('/');
+  //Log things into SQL
+}
 
 function mySavedBooks(request, response) {
   client.query('select * from bookshelf;').then(resultFromSQL => {
-    response.render('./books/show.ejs', {myBooks : resultFromSQL.rows});
+    response.render('./books/show.ejs', {myBooks : resultFromSQL.rows, rowCount : resultFromSQL.rowCount} );
   })
 }
 
@@ -54,9 +65,6 @@ function searchForBook(request, response){
   superagent.get(url).then(result => {
     const bookResults = result.body.items;
     const formattedData = bookResults.slice(0, 10).map(book => {
-      // const sqlInsert = 'INSERT INTO bookshelf (author, title, isbn, image_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6);'
-      // const sqlArray = [book.volumeInfo.authors, book.volumeInfo.title, book.volumeInfo.industryIdentifiers[0].identifier, book.volumeInfo.imageLinks.smallThumbnail, book.volumeInfo.description, 'Genre']
-      // client.query(sqlInsert, sqlArray)
       return new Book(book);
     })
     response.render('./pages/searches/show', {myBooks : formattedData});
