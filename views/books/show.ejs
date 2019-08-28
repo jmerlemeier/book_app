@@ -3,14 +3,17 @@
     <%- include('../layout/header') %>
   <h1>These are your saved books</h1>
   <% for(let i = 0; i < myBooks.length; i++) { %> 
+
+    <h1><%= rowCount %></h1>
     <div class=bookInfo>
       <ul>
-        <img src= <%= myBooks[i].image_url %> />
+        <a href="/books/<%=myBooks[i].isbn %>"><img src= <%= myBooks[i].image_url %> /></a>
         <li> <%= myBooks[i].title %> </li>
         <li> <%= myBooks[i].author %> </li>
         <li> <%= myBooks[i].description %> </li>
-        <li> <%= myBooks[i].ISBN %> </li>
+        <li> <%= myBooks[i].isbn %> </li>
       </ul>
+      
     </div>
     <% } %>
     <%- include('../layout/footer') %>

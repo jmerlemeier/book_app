@@ -7,11 +7,11 @@
   <% for(let i = 0; i < myBooks.length; i++) { %> 
     <div class=bookInfo>
       <ul>
-        <a href="/books/<%=myBooks[i].ISBN %>"><img src= <%= myBooks[i].image_url %> /></a>
+        <a href="/books/<%=myBooks[i].isbn %>"><img src= <%= myBooks[i].image_url %> /></a>
         <li> <%= myBooks[i].title %> </li>
         <li> <%= myBooks[i].author %> </li>
         <li> <%= myBooks[i].description %> </li>
-        <li> <%= myBooks[i].ISBN %> </li>
+        <li> <%= myBooks[i].isbn %> </li>
       </ul>
     </div>
     <% } %>
