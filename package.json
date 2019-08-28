@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/jmerlemeier/book_app#readme",
   "dependencies": {
+    "dotenv": "^8.1.0",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
+    "pg": "^7.12.1",
     "superagent": "^5.1.0"
   }
 }

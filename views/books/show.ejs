@@ -1,13 +1,11 @@
-<%- include('../../layout/head') %>
+<%- include('../layout/head') %>
 <body>
-    <%- include('../../layout/header') %>
-  <h1>These books are from your search query!</h1>
-
-  
+    <%- include('../layout/header') %>
+  <h1>These are your saved books</h1>
   <% for(let i = 0; i < myBooks.length; i++) { %> 
     <div class=bookInfo>
       <ul>
-        <a href="/books/<%=myBooks[i].ISBN %>"><img src= <%= myBooks[i].image_url %> /></a>
+        <img src= <%= myBooks[i].image_url %> />
         <li> <%= myBooks[i].title %> </li>
         <li> <%= myBooks[i].author %> </li>
         <li> <%= myBooks[i].description %> </li>
@@ -15,6 +13,6 @@
       </ul>
     </div>
     <% } %>
-    <%- include('../../layout/footer') %>
+    <%- include('../layout/footer') %>
 </body>
 </html>
