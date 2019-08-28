@@ -1,0 +1,19 @@
+<%- include('../layout/head') %>
+<body>
+    <%- include('../layout/header') %>
+  <h1>This is the details for this specific book.</h1>
+
+
+    <div class=bookInfo>
+      <ul>
+        <a href=""><img src= <%= specificBook.image_url %> /></a>
+        <li> <%= specificBook.title %> </li>
+        <li> <%= specificBook.author %> </li>
+        <li> <%= specificBook.description %> </li>
+        <li> <%= specificBook.isbn %> </li>
+      </ul>
+    </div>
+
+    <%- include('../layout/footer') %>
+</body>
+</html>
