@@ -1,15 +1,16 @@
 <%- include('../layout/head') %>
 <body>
     <%- include('../layout/header') %>
-  <h1>This is the details for this specific book.</h1>
+  
+    <!-- <h1>TEST TEST</h1> -->
 
 
-    <div class=bookInfo>
+    <div id="bookInfo">
       <ul>
         <img src= <%= specificBook.image_url %> />
-        <li> <%= specificBook.title %> </li>
-        <li> <%= specificBook.author %> </li>
-        <li> <%= fullDescription.description %> </li>
+        <li class="card"> <%= specificBook.title %> </li>
+        <li class="card"> <%= specificBook.author %> </li>
+        <li class="card" id="description"> <%= fullDescription.description %> </li>
         <!-- <li> <%= specificBook.ISBN %> </li> -->
       </ul>
     </div>
@@ -25,7 +26,7 @@
         <input type="hidden" name="isbn" value="<%= specificBook.isbn %>">
         <input type="text" name="bookshelf" placeholder="Please enter a genre" required>
 
-        <button type="submit">Add to library</button>
+        <button type="submit" class=".button">Add to Collection</button>
       </fieldset>
     </form>
 
