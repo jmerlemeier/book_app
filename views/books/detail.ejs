@@ -9,24 +9,23 @@
         <img src= <%= specificBook.image_url %> />
         <li> <%= specificBook.title %> </li>
         <li> <%= specificBook.author %> </li>
-        <li> <%= specificBook.description %> </li>
-        <li> <%= specificBook.ISBN %> </li>
+        <li> <%= fullDescription.description %> </li>
+        <!-- <li> <%= specificBook.ISBN %> </li> -->
       </ul>
     </div>
 
-    <!-- const sqlArray = [book.volumeInfo.authors, book.volumeInfo.title, book.volumeInfo.industryIdentifiers[0].identifier, book.volumeInfo.imageLinks.smallThumbnail, book.volumeInfo.description, 'Genre'] -->
 
     <form id="create-form" action="/add" method="POST">
       <fieldset>
         <legend>Details for this book</legend>
-        <input type="text" name="title" value="<%= specificBook.title %>">
-        <input type="text" name="author" value="<%= specificBook.author %>">
-        <input type="text" name="image_url" value="<%= specificBook.image_url %>">
-        <input type="text" name="description" value="<%= specificBook.description %>">
-        <input type="text" name="isbn" value="<%= specificBook.ISBN %>">
-        <input type="text" name="bookshelf" placeholder="Please enter a genre">
+        <input type="hidden" name="title" value="<%= specificBook.title %>">
+        <input type="hidden" name="author" value="<%= specificBook.author %>">
+        <input type="hidden" name="image_url" value="<%= specificBook.image_url %>">
+        <input type="hidden" name="description" value="<%= specificBook.description %>">
+        <input type="hidden" name="isbn" value="<%= specificBook.isbn %>">
+        <input type="text" name="bookshelf" placeholder="Please enter a genre" required>
 
-        <button type="submit">Add this book to your library</button>
+        <button type="submit">Add to library</button>
       </fieldset>
     </form>
 

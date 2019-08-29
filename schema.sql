@@ -1,6 +1,9 @@
 CREATE DATABASE book_app;
+go
+USE book_app;
+go
 DROP TABLE IF EXISTS bookshelf;
-
+go
 CREATE TABLE bookshelf (
   id SERIAL PRIMARY KEY,
   author VARCHAR(255),

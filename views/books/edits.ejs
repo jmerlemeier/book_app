@@ -1,0 +1,40 @@
+<%- include('../layout/head') %>
+<body>
+    <%- include('../layout/header') %>
+  <h1>This is the details for this specific book.</h1>
+
+
+    <div class=bookInfo>
+      <ul>
+        <img src= <%= specificBook.image_url %> />
+        <li> <%= specificBook.title %> </li>
+        <li> <%= specificBook.author %> </li>
+        <li> <%= specificBook.description %> </li>
+        <!-- <li> <%= specificBook.isbn %> </li> -->
+      </ul>
+    </div>
+
+    <form id="update-form" action="/books/<%= specificBook.isbn %>/update" method="POST">
+      <fieldset>
+        <legend>Details for this book</legend>
+        <input type="text" name="title" value="<%= specificBook.title %>">
+        <input type="text" name="author" value="<%= specificBook.author %>">
+        <input type="hidden" name="image_url" value="<%= specificBook.image_url %>">
+        <input type="text" name="description" value="<%= specificBook.description %>">
+        <input type="hidden" name="isbn" value="<%= specificBook.isbn %>">
+        <input type="text" name="bookshelf" value="<%= specificBook.bookshelf %>" placeholder="Please enter a genre" required>
+        <input type="hidden" name="_method" value="PUT">
+        <button type="submit">Edit Book</button>
+      </fieldset>
+    </form>
+    <form id="delete-form" action="/books/<%=specificBook.isbn %>" method="POST">
+      <fieldset>
+      <input type="hidden" name="isbn" value="<% specificBook.isbn %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button>Remove from Library</button>
+      </fieldset>
+    </form>
+
+    <%- include('../layout/footer') %>
+</body>
+</html>
