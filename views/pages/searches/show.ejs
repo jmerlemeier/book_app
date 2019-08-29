@@ -3,17 +3,22 @@
     <%- include('../../layout/header') %>
   <h1>These books are from your search query!</h1>
 
-  
   <% for(let i = 0; i < myBooks.length; i++) { %> 
-    <div class=bookInfo>
-      <ul>
-        <a href="/books/<%=myBooks[i].isbn %>"><img src= <%= myBooks[i].image_url %> /></a>
-        <li> <%= myBooks[i].title %> </li>
-        <li> <%= myBooks[i].author %> </li>
-        <li> <%= myBooks[i].description %> </li>
-        <li> <%= myBooks[i].isbn %> </li>
-      </ul>
-    </div>
+
+    <ul>
+      <a href="/books/<%=myBooks[i].isbn %>"><img src= <%= myBooks[i].image_url %> /></a>
+      <li> <%= myBooks[i].title %> </li>
+      <li> <%= myBooks[i].author %> </li>
+      <li> <%= myBooks[i].description %> </li>
+      <!-- <li> <%= myBooks[i].isbn %> </li> -->
+    </ul>
+    <a href="/books/<%=myBooks[i].isbn %>"><button>View more details</button></a>
+    <form id="save-book" action="/add/<%= myBooks[i].isbn %>" method="POST">
+      <fieldset>
+        <input type="hidden" name="isbn" value="<% myBooks[i].isbn %>" >
+        <button type="submit">Add to library</button>
+      </fieldset>
+    </form>    
     <% } %>
     <%- include('../../layout/footer') %>
 </body>

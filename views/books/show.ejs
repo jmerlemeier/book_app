@@ -2,9 +2,9 @@
 <body>
     <%- include('../layout/header') %>
   <h1>These are your saved books</h1>
+  <h1><%= rowCount %> saved books</h1>
   <% for(let i = 0; i < myBooks.length; i++) { %> 
 
-    <h1><%= rowCount %></h1>
     <div class=bookInfo>
       <ul>
         <a href="/books/<%=myBooks[i].isbn %>"><img src= <%= myBooks[i].image_url %> /></a>
@@ -13,7 +13,7 @@
         <li> <%= myBooks[i].description %> </li>
         <li> <%= myBooks[i].isbn %> </li>
       </ul>
-      
+      <a href="/books/<%= myBooks[i].isbn %>/update"><button>Update Book</button></a>
     </div>
     <% } %>
     <%- include('../layout/footer') %>
