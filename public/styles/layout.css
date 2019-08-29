@@ -1,6 +1,3 @@
-/* set intial max-width */
-/* make small one first, then do media query for larger */
-
 body {
   display: grid;
   max-width: 480px;
@@ -10,13 +7,14 @@ body {
   background: url(./bookbackground.jpg) no-repeat center center fixed;
 }
 
-#bookInfo {
+.deck {
+  border-radius: 10px;
 }
 
-/* BUTTON */
+/* BUTTON, created in https://css-tricks.com/examples/ButtonMaker/# */ 
 button {
    border-top: 1px solid #96d1f8;
-   background: #65a9d7;
+   background: #A3B9C7;
    background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
    background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
    background: -moz-linear-gradient(top, #3e779d, #65a9d7);
@@ -51,7 +49,9 @@ button:active {
 /* END OF BUTTON */
 
 .card {
-  background: rgba(163, 185, 199, 0.534);
+  background: rgba(250, 238, 230, 0.733);
+  line-height: 1.8em;
+  padding: 0.5em;
   margin-right: 1.5em;
   margin-left: 1.5em;
 }
@@ -64,16 +64,30 @@ button:active {
 }
 
 h1 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 2em;
   text-align: center;
-  padding: 1em;
-  text-shadow: #FAE6E6 1px 1px 2px;
+  letter-spacing: 0.1em;
+  padding: 0.5em;
+  text-shadow: rgba(219, 214, 214, 0.76) 1px 1px 2px;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-shadow: rgba(219, 214, 214, 0.76) 1px 1px 2px;
+}
+
+#hero {
+  margin-top: 2em;
 }
 
 img {
-  border: solid #97A5AD 5px;
+  border: groove rgba(0, 0, 0, 0.781) 5px;
   margin: 2em;
+  margin-top: 6em;
 }
 
 legend {
@@ -102,8 +116,8 @@ div {
 }
 
 form {
-  background: rgba(163, 185, 199, 0.733);
-  border: #B03030 solid 1px;
+  background: rgba(250, 238, 230, 0.733);
+  border: black solid 1px;
   padding-top: 0;
   padding-bottom: 2em;
   padding-right: 2em;
@@ -112,3 +126,5 @@ form {
 }
 
 /* when it gets bigger thn 480px-760, do this. */
+/* set intial max-width */
+/* make small one first, then do media query for larger */

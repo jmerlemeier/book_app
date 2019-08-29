@@ -5,13 +5,14 @@
     <!-- <h1>TEST TEST</h1> -->
 
 
-    <div id="bookInfo">
-      <ul>
-        <img src= <%= specificBook.image_url %> />
-        <li class="card"> <%= specificBook.title %> </li>
-        <li class="card"> <%= specificBook.author %> </li>
-        <li class="card" id="description"> <%= fullDescription.description %> </li>
-        <!-- <li> <%= specificBook.ISBN %> </li> -->
+    <div class="bookInfo">
+      <ul class="deck">
+        <section class="card">
+          <li class="title"> <%= myBooks[i].title %> </li>
+          <li class="author"> <%= myBooks[i].author %> </li>
+          <li class="description"> <%= myBooks[i].description %> </li>
+          <!-- <li class="isbn"> ISBN: <%= myBooks[i].isbn %> </li> -->
+         </section>
       </ul>
     </div>
 

@@ -1,17 +1,19 @@
 <%- include('../layout/head') %>
 <body>
     <%- include('../layout/header') %>
-  <h1>These are your saved books</h1>
-  <h1><%= rowCount %> saved books</h1>
+  <h2>These are your saved books</h2>
+  <h2>You have '<%= rowCount %>' saved.</h1>
   <% for(let i = 0; i < myBooks.length; i++) { %> 
 
-    <div class=bookInfo>
-      <ul>
+    <div class="bookInfo">
+      <ul class="deck">
         <a href="/books/<%=myBooks[i].isbn %>/update"><img src= <%= myBooks[i].image_url %> /></a>
-        <li> <%= myBooks[i].title %> </li>
-        <li> <%= myBooks[i].author %> </li>
-        <li> <%= myBooks[i].description %> </li>
-        <li> <%= myBooks[i].isbn %> </li>
+        <section class="card">
+        <li class="title"> <%= myBooks[i].title %> </li>
+        <li class="author"> <%= myBooks[i].author %> </li>
+        <li class="description"> <%= myBooks[i].description %> </li>
+        <li class="isbn"> ISBN: <%= myBooks[i].isbn %> </li>
+       </section>
       </ul>
       <a href="/books/<%= myBooks[i].isbn %>/update"><button>Update Book</button></a>
     </div>
