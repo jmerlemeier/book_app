@@ -9,6 +9,7 @@ body {
 
 .deck {
   border-radius: 10px;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* BUTTON, created in https://css-tricks.com/examples/ButtonMaker/# */ 
@@ -70,6 +71,8 @@ h1 {
   letter-spacing: 0.1em;
   padding: 0.5em;
   text-shadow: rgba(219, 214, 214, 0.76) 1px 1px 2px;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
 }
 
 h2 {
@@ -78,6 +81,8 @@ h2 {
   text-align: center;
   letter-spacing: 0.1em;
   text-shadow: rgba(219, 214, 214, 0.76) 1px 1px 2px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 #hero {
@@ -97,13 +102,14 @@ legend {
   text-align: center;
   line-height: 1.4em;
 }
+
+li{
+  line-height: 2em;
+}
+
 span {
  font-family: 'Raleway', sans-serif;
  font-size: 1.0em;
-}
-
-nav {
-  /* padding-bottom: 2em; */
 }
 
 ul {
@@ -123,6 +129,24 @@ form {
   padding-right: 2em;
   padding-left: 2em;
   margin: 1em;
+}
+
+#save-book{
+  background: none;
+  border: none;
+  text-align: center;
+  margin-top: -1em;
+}
+
+#delete-form {
+  background: none;
+  border: none;
+  margin-right: 2em;
+  margin-left: 2em;
+}
+
+#search-box {
+  
 }
 
 /* when it gets bigger thn 480px-760, do this. */
