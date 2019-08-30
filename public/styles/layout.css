@@ -1,0 +1,130 @@
+body {
+  display: grid;
+  max-width: 480px;
+  grid-template-columns: 5, 20%;
+  margin: auto;
+  /* border: black solid 5px; */
+  background: url(./bookbackground.jpg) no-repeat center center fixed;
+}
+
+.deck {
+  border-radius: 10px;
+}
+
+/* BUTTON, created in https://css-tricks.com/examples/ButtonMaker/# */ 
+button {
+   border-top: 1px solid #96d1f8;
+   background: #A3B9C7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 8px 16px;
+   -webkit-border-radius: 18px;
+   -moz-border-radius: 18px;
+   border-radius: 18px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 0.8em;
+   font-family: 'Raleway', sans-serif;
+   letter-spacing: 0.2em;
+   margin: 1em;
+   /* display: inline-block; */
+   text-decoration: none;
+   vertical-align: middle;
+   }
+button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #cccccc;
+   }
+button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+/* END OF BUTTON */
+
+.card {
+  background: rgba(250, 238, 230, 0.733);
+  line-height: 1.8em;
+  padding: 0.5em;
+  margin-right: 1.5em;
+  margin-left: 1.5em;
+}
+
+#description {
+  font-family: 'Darker Grotesque', sans-serif;
+  margin: 1em;
+  font-weight: bold;
+  border: solid 1px #B03030;
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2em;
+  text-align: center;
+  letter-spacing: 0.1em;
+  padding: 0.5em;
+  text-shadow: rgba(219, 214, 214, 0.76) 1px 1px 2px;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-shadow: rgba(219, 214, 214, 0.76) 1px 1px 2px;
+}
+
+#hero {
+  margin-top: 2em;
+}
+
+img {
+  border: groove rgba(0, 0, 0, 0.781) 5px;
+  margin: 2em;
+  margin-top: 6em;
+}
+
+legend {
+  font-family: 'Raleway', sans-serif;
+  padding: 1em;
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 1.4em;
+}
+span {
+ font-family: 'Raleway', sans-serif;
+ font-size: 1.0em;
+}
+
+nav {
+  /* padding-bottom: 2em; */
+}
+
+ul {
+  font-family: 'Karla', sans-serif;
+  line-height: 1.5em;
+}
+
+div {
+  text-align: center;
+}
+
+form {
+  background: rgba(250, 238, 230, 0.733);
+  border: black solid 1px;
+  padding-top: 0;
+  padding-bottom: 2em;
+  padding-right: 2em;
+  padding-left: 2em;
+  margin: 1em;
+}
+
+/* when it gets bigger thn 480px-760, do this. */
+/* set intial max-width */
+/* make small one first, then do media query for larger */

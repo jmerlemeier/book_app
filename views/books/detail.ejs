@@ -1,16 +1,18 @@
 <%- include('../layout/head') %>
 <body>
     <%- include('../layout/header') %>
-  <h1>This is the details for this specific book.</h1>
+  
+    <!-- <h1>TEST TEST</h1> -->
 
 
-    <div class=bookInfo>
-      <ul>
-        <img src= <%= specificBook.image_url %> />
-        <li> <%= specificBook.title %> </li>
-        <li> <%= specificBook.author %> </li>
-        <li> <%= fullDescription.description %> </li>
-        <!-- <li> <%= specificBook.ISBN %> </li> -->
+    <div class="bookInfo">
+      <ul class="deck">
+        <section class="card">
+          <li class="title"> <%= myBooks[i].title %> </li>
+          <li class="author"> <%= myBooks[i].author %> </li>
+          <li class="description"> <%= myBooks[i].description %> </li>
+          <!-- <li class="isbn"> ISBN: <%= myBooks[i].isbn %> </li> -->
+         </section>
       </ul>
     </div>
 
@@ -25,7 +27,7 @@
         <input type="hidden" name="isbn" value="<%= specificBook.isbn %>">
         <input type="text" name="bookshelf" placeholder="Please enter a genre" required>
 
-        <button type="submit">Add to library</button>
+        <button type="submit" class=".button">Add to Collection</button>
       </fieldset>
     </form>
 
