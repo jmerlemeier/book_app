@@ -5,20 +5,27 @@
 
   <% for(let i = 0; i < myBooks.length; i++) { %> 
 
-    <ul>
-      <a href="/books/<%=myBooks[i].isbn %>"><img src= <%= myBooks[i].image_url %> /></a>
-      <li> <%= myBooks[i].title %> </li>
-      <li> <%= myBooks[i].author %> </li>
-      <li> <%= myBooks[i].description %> </li>
-      <!-- <li> <%= myBooks[i].isbn %> </li> -->
+  <div class="bookInfo">
+    <ul class="deck">
+      <section class="card">
+        <a href="/books/<%=myBooks[i].isbn %>"><img src= <%= myBooks[i].image_url %> /></a>
+        <li class="title"> <%= myBooks[i].title %> </li>
+        <li class="author"> <%= myBooks[i].author %> </li>
+        <li class="description"> <%= myBooks[i].description %> </li>
+        <!-- <li> <%= myBooks[i].isbn %> </li> -->
+    </section>
     </ul>
+
+  </div>
+  <div id="book-buttons">
     <a href="/books/<%=myBooks[i].isbn %>"><button>View more details</button></a>
     <form id="save-book" action="/add/<%= myBooks[i].isbn %>" method="POST">
       <fieldset>
         <input type="hidden" name="isbn" value="<% myBooks[i].isbn %>" >
         <button type="submit">Add to library</button>
       </fieldset>
-    </form>    
+    </form>
+  </div>    
     <% } %>
     <%- include('../../layout/footer') %>
 </body>

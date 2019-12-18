@@ -1,16 +1,19 @@
 <%- include('../layout/head') %>
 <body>
     <%- include('../layout/header') %>
-  <h1>This is the details for this specific book.</h1>
+  
+  
+    <!-- <h1>Detail Page</h1> -->
 
 
-    <div class=bookInfo>
-      <ul>
-        <img src= <%= specificBook.image_url %> />
-        <li> <%= specificBook.title %> </li>
-        <li> <%= specificBook.author %> </li>
-        <li> <%= specificBook.description %> </li>
-        <!-- <li> <%= specificBook.isbn %> </li> -->
+    <div class="bookInfo">
+      <ul class="deck">
+        <section class="card">
+          <li class="title"> <%= specificBook.title %> </li>
+          <li class="author"> <%= specificBook.author %> </li>
+          <li class="description"> <%= specificBook.description %> </li>
+          <li class="isbn"> ISBN: <%= specificBook.isbn %> </li>
+         </section>
       </ul>
     </div>
 

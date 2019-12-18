@@ -5,11 +5,11 @@
 
   <form action="/book-search" method="POST">
     <fieldset>
-      <legend>Search by Title or Author</legend>
+      <legend>Please Search by Title or Author</legend>
       <label for="search">
 
         <span>Title</span>
-        <input type="radio" name="search" value="title">
+        <input type="radio" name="search" value="title" checked="checked">
       </label>
       
       <label for="Author">
@@ -18,9 +18,9 @@
       </label>
 
       <label for="search">
-          <input type="text" name="search" placeholder="insert book name or author, or what the fuck ever.">
+          <input type="text" name="search" placeholder="Enter title or author, please..." required>
       </label>
-
+      <button>Search</button>
     </fieldset>
   </form>
 

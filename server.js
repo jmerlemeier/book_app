@@ -83,6 +83,7 @@ function mySavedBooks(request, response) {
 function getOneBook(request, response) {
   let url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${request.params.isbn}`;
   superagent.get(url).then(result => {
+    // console.log(result.body.items);
     const bookResults = result.body.items[0];
     // console.log(bookResults)
     let mySingleBook = new Book(bookResults);
